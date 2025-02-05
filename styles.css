@@ -1,4 +1,8 @@
-/* Basic Reset */
+/* styles.css */
+:root {
+    --title-color: hsl(38, 80%, 40%);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,21 +10,20 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
+    overflow: hidden; /* 防止滚动条闪烁 */
 }
 
-#initial-screen {
+#initial-screen,
+#main-content {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-size: cover;
-    background-position: center;
-    z-index: 1;
+}
+
+#initial-screen {
+    z-index: 2;
 }
 
 #initial-screen img {
@@ -29,97 +32,32 @@ body {
     object-fit: cover;
 }
 
-#titles {
+#titles,
+#main-titles {
     position: absolute;
-    top: 20px;
-    left: 20px;
-    color: white;
+    top: 40px;
+    left: 60px;
+    z-index: 3;
+    color: var(--title-color);
 }
 
-#titles h1 {
-    font-size: 36px;
+#titles h1,
+#main-titles h1 {
+    font-size: 48px;
 }
 
-#titles h2 {
-    font-size: 24px;
+#titles h2,
+#main-titles h2 {
+    font-size: 18px;
 }
 
 #main-content {
-    display: none;
+    opacity: 0;
+    z-index: 1;
 }
 
-header {
-    background: #333;
-    color: #fff;
-    padding: 1rem 0;
-    text-align: center;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 1rem;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-section {
-    padding: 2rem;
-    margin: 1rem;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1, h2 {
-    color: #333;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-form label {
-    margin-bottom: 0.5rem;
-}
-
-form input, form textarea {
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-form button {
-    padding: 0.5rem;
-    background: #333;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-form button:hover {
-    background: #555;
-}
-
-footer {
-    text-align: center;
-    padding: 1rem 0;
-    background: #333;
-    color: #fff;
-    margin-top: 2rem;
+#main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
